@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+
+<style>
+
+#container {
+	width:70%;
+}
+
+#billBoardImage {
+	width: 1200px;	
+	height: 1000px;
+	background-repeat: no-repeat;
+}
+
+#billBoardText {
+	width:60%;
+}
+
+#boundary {
+	border: 2px solid black;
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+<div id="container">
+
+<table>
+<tr>
+<td>I am looking for</td> 
+<td><select id="selection1">
+<option value="makeSelect1">make selection</option>
+<option value="fastFacts">fast facts</option>
+<option value="graphs">graphs & tables</option>
+<option value="research">research articles</option>
+</select>
+</td>
+<td>about</td>
+<td><select id="selection2">
+<option value="makeSelect2">make selection</option>
+<option value="autism">autism</option>
+<option value="transition">school to work transition</option>
+<option value="brain">brain injury rehabilitation</option>
+</select>
+</td>
+<td>.</td>
+</tr>
+</table>
+
+
+
+<div id="billBoard">
+<p id="billBoardText"></p>
+<div id="billBoardImage"></div>
+</div>
+
+</div>
+
+
+<script>
+
+var x = document.getElementById("selection1");
+var y = document.getElementById("selection2");
+
+x.addEventListener("change" , results);
+y.addEventListener("change" , results);
+
+function results() {
+var a = document.getElementById("selection1").value;
+var b = document.getElementById("selection2").value;
+
+if (a === "fastFacts" && b === "autism") {
+	document.getElementById("billBoardText").innerHTML = "<b>Autism Symptoms</b> </br> </br>*Person does not respond to his or her name several times in a row </br>*Prefers being alone</br>*Uses robot-like speech patterns</br>*Harms self with head banging</br>*Child does not participate in pretend play";
+	document.getElementById("billBoardImage").style.backgroundImage ="";
+	}
+
+if (a === "fastFacts" && b === "transition") {
+	document.getElementById("billBoardText").innerHTML = "<b>Transition-Age Youth</b></br>*Youth in poverty do not have the financial resources to access the same educational options available to affluent peers</br>*Employment is a critical component of the transition from adolescence to adulthood</br>*Youth with disabilities have a much higher unemployment rate than their peers ";
+	document.getElementById("billBoardImage").style.backgroundImage ="";
+	}
+
+if (a === "fastFacts" && b === "brain") {
+	document.getElementById("billBoardText").innerHTML = "<b>Employment after Brain Injury</b><br>*About 40% of people with brain injuries are able return to work</br>*Some 80% of people with mild brain injury successfully returned to work</br>*Brain injury includes barriers like cognitive impairment</br>*Family support is critical for successful re-entry into work";
+	document.getElementById("billBoardImage").style.backgroundImage ="";
+	}
+
+
+if (a === "graphs" && b === "autism") {
+	document.getElementById("billBoardImage").style.backgroundImage ="url('autism1.png')";
+	document.getElementById("billBoardText").innerHTML ="";
+}
+
+if (a === "graphs" && b === "transition") {
+	document.getElementById("billBoardImage").style.backgroundImage ="url('transition1.png')";
+	document.getElementById("billBoardText").innerHTML ="";
+}
+
+if (a === "graphs" && b === "brain") {
+	document.getElementById("billBoardImage").style.backgroundImage ="url('brain1.png')";
+	document.getElementById("billBoardText").innerHTML ="";
+}
+
+
+if (a === "research" && b === "transition") {
+	document.getElementById("billBoardText").innerHTML="Schlegelmilch, A., Roskowski, M., Anderson, C., Hartman, E. & Decker-Maurer, H. (2019). <a href='https://content.iospress.com/download/journal-of-vocational-rehabilitation/jvr191032?id=journal-of-vocational-rehabilitation%2Fjvr191032' target='_blank'>The impact of work incentives benefits counseling on employment outcomes of transition-age youth receiving Supplemental Security Income (SSI) benefits.</a> Journal of Vocational Rehabilitation 51(2), 127-136.</br></br>Saleh, M., Shaw, L., Malzer, V. & Podolec, M. (2019). <a href='https://content.iospress.com/download/journal-of-vocational-rehabilitation/jvr191037?id=journal-of-vocational-rehabilitation%2Fjvr191037' target='_blank'>Interagency collaboration in transition to adulthood: A mixed methods approach to identifying promising practices and processes in the NYS PROMISE project</a>. Journal of Vocational Rehabilitation 51(2), 183-198.";
+	document.getElementById("billBoardImage").style.backgroundImage ="";
+}
+
+
+if (a === "research" && b === "autism") {
+	document.getElementById("billBoardText").innerHTML="Gladh, L. (2014). <a href='https://content.iospress.com/download/journal-of-vocational-rehabilitation/jvr701?id=journal-of-vocational-rehabilitation%2Fjvr701' target='_blank'>The Validation Process: a useful tool to visualize abilities and enhance the possibilities of paid emloyment for people with ASD.</a> Journal of Vocational Rehabilitation 41(1), 71-76.";
+	document.getElementById("billBoardImage").style.backgroundImage ="";	
+}
+
+
+if (a === "research" && b === "brain") {
+	document.getElementById("billBoardText").innerHTML="Trexler, L.E. & Parrott, D.R. (2018). <a href='https://content.iospress.com/download/journal-of-vocational-rehabilitation/jvr965?id=journal-of-vocational-rehabilitation%2Fjvr965' target='_blank'>Models of brain injury vocational rehabilitation: The evidence for resource facilitation from efficacy to effectiveness</a>. Journal of Vocational Rehabilitation 49(2), 195-203.";
+	document.getElementById("billBoardImage").style.backgroundImage ="";	
+}
+
+}
+
+</script>
+
+
+</body>
+
+
+</html>
